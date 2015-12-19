@@ -60,9 +60,19 @@ public class Tile implements Serializable{
 	public void setOutlets(Set<Tile> outlets) {
 		this.outlets = outlets;
 	}
+	
+	public void addOutlet (Tile tile)	
+	{
+		this.outlets.add(tile);
+	}
 
 	public Set<Tile> getInlets() {
 		return inlets;
+	}
+	
+	public void addInlet (Tile tile)	
+	{
+		this.inlets.add(tile);
 	}
 
 	public void setInlets(Set<Tile> inlets) {
