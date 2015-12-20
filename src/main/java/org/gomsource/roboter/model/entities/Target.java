@@ -10,7 +10,7 @@ import org.neo4j.ogm.annotation.Relationship;
 public class Target implements Serializable{
 	
 	@GraphId
-	private long id;
+	private Long id;
 	
 	@Relationship(type = "GOALS", direction = "INCOMING")
 	private Tile tile;

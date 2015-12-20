@@ -1,6 +1,8 @@
 package org.gomsource.roboter.model.entities;
 
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 
 import org.neo4j.ogm.annotation.GraphId;
 import org.neo4j.ogm.annotation.NodeEntity;
@@ -13,7 +15,7 @@ public class Robot implements Serializable{
 	private Long id;
 	
 	@Relationship (type = "HAS_COLOR", direction = "OUTGOING")
-	private Color color;
+	private Set<Color> colors = new HashSet<Color> ();
 	
 	@Relationship (type = "HAS_POSITION", direction = "OUTGOING")
 	private Tile currentPosition;
@@ -26,13 +28,7 @@ public class Robot implements Serializable{
 		this.id = id;
 	}
 
-	public Color getColor() {
-		return color;
-	}
-
-	public void setColor(Color color) {
-		this.color = color;
-	}
+	
 
 	public Tile getCurrentPosition() {
 		return currentPosition;
@@ -40,6 +36,18 @@ public class Robot implements Serializable{
 
 	public void setCurrentPosition(Tile currentPosition) {
 		this.currentPosition = currentPosition;
+	}
+
+	public Set<Color> getColors() {
+		return colors;
+	}
+
+	public void setColors(Set<Color> colors) {
+		this.colors = colors;
+	}
+	
+	public void addColor(Color color) {
+		this.colors.add(color);
 	}
 	
 	

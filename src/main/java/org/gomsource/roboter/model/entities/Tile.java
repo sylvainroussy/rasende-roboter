@@ -95,15 +95,21 @@ public class Tile implements Serializable{
 		this.robot = robot;
 	}
 	
+	public boolean isOccupied ()
+	{
+		return this.robot != null;
+	}
+	
 	@Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (o == null || id == null || getClass() != o.getClass()) return false;
+        if (o == null || getClass() != o.getClass()) return false;
 
         Tile entity = (Tile) o;
 
-        if (!id.equals(entity.id)) return false;
-
+        if (id != null && !id.equals(entity.id)) return false;
+        if (this.posX != entity.posX) return false;
+        if (this.posY != entity.posY) return false;
         return true;
     }
 

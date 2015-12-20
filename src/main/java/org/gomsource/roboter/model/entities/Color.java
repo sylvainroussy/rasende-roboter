@@ -45,6 +45,11 @@ public class Color implements Serializable {
 	public void setRobots(Set<Robot> robots) {
 		this.robots = robots;
 	}
+	
+	public void addRobot (Robot robot)
+	{
+		this.robots.add(robot);
+	}
 
 	public Set<Target> getGoals() {
 		return goals;
@@ -52,6 +57,11 @@ public class Color implements Serializable {
 
 	public void setGoals(Set<Target> goals) {
 		this.goals = goals;
+	}
+	
+	public void addGoal (Target target)
+	{
+		this.goals.add(target);
 	}
 	
 	
